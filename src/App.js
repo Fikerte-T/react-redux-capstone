@@ -1,12 +1,20 @@
 import './App.css';
+import { Provider } from 'react-redux';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import Home from './components/Home';
+import Details from './components/Details';
+import store from './redux/configureStore';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/details" element={<Details />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
