@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getDataFromApi } from '../redux/home/home';
 
-const selectedData = (state) => state.homeReducer;
+// const selectedData = (state) => state.homeReducer;
 const Home = () => {
   const dispatch = useDispatch();
-  const countryData = useSelector(selectedData);
-  console.log(countryData);
+  const countryData = useSelector((state) => state.countries);
   const getData = () => {
     if (countryData.length === 0) {
       dispatch(getDataFromApi());
@@ -18,19 +17,37 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  // const handleSelect=(e)=>{
+  //   console.log(e);
+  // }
+
   return (
     <div>
       <div>
-        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+        {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button"
+          onClick={(e) => handleSelect(e.target.value)}>
           <Dropdown.Item href="/details">Action</Dropdown.Item>
-        </DropdownButton>
+          {countryData.map((m) => (
+            <Dropdown.Item  >
+                {m.country_name}
+            </Dropdown.Item>
+
+         ))}
+        </DropdownButton> */}
+        {/* <select onChange={e=> handleSelect(e.target.value)}>
+            {countryData.map((m) => (
+              <option>{m.country_name}</option>
+            ))}
+        </select>
+        <Link to='/details'>Today's data</Link> */}
       </div>
-      {countryData.map((m) => (
+      {/* {countryData.map((m) => (
         <div>
           <p>{m.country_name}</p>
           <p>{m.today_confirmed}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

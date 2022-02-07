@@ -1,16 +1,21 @@
-const GET_DATA_FROM_API = 'GET_DATA_FROM_API';
+const GET_DATA_FROM_API = 'react-redux-capstone/home/GET_DATA_FROM_API';
 const initialState = [];
 
 const today = new Date();
-const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-console.log(date);
+// const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
+const formatDate = (today) => {
+  const date = (today.getDate() < 10 ? '0' : '') + today.getDate();
+  const month = (today.getMonth() < 10 ? '0' : '') + today.getMonth();
+  return `${today.getFullYear()}-${month}-${date}`;
+};
+const date = formatDate(today);
 const baseUrl = `https://api.covid19tracking.narrativa.com/api/${date}`;
 
 export const getDataFromApi = () => (async (dispatch) => {
   const response = await fetch(baseUrl);
   const responseData = await response.json();
   const extractData = responseData.dates[date].countries;
-  console.log(extractData);
   const countryDataArr = Object.entries(extractData).map(([, countryData]) => ({
     country_name: countryData.name,
     today_confirmed: countryData.today_confirmed,

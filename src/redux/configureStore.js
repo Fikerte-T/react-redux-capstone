@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import homeReducer from './home/home';
 
 const reducer = combineReducers({
-  homeReducer,
+  countries: homeReducer,
 });
 const store = createStore(reducer, applyMiddleware(logger, thunk));
 
