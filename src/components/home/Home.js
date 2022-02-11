@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getDataFromApi } from '../redux/home/home';
+import { getDataFromApi } from '../../redux/home/home';
 import rightArrow from '../images/arrow_circle_right_white_24dp.svg';
 
 // const selectedData = (state) => state.homeReducer;
