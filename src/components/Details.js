@@ -6,7 +6,9 @@ const Details = () => {
   const location = useLocation();
   const value = location.state;
   const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-
+  const numberWithCommas = (n) => {
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  }
   return (
     <>
       <header>
@@ -25,19 +27,19 @@ const Details = () => {
       <div>
         <div>
           <p>Today confirmed</p>
-          <p>{value.today_confirmed}</p>
+          <p>{numberWithCommas(value.today_confirmed)}</p>
         </div>
         <div>
           <p>Today deaths</p>
-          <p>{value.today_deaths}</p>
+          <p>{numberWithCommas(value.today_deaths)}</p>
         </div>
         <div>
           <p>Today new confirmed</p>
-          <p>{value.new_confirmed}</p>
+          <p>{numberWithCommas(value.new_confirmed)}</p>
         </div>
         <div>
           <p>Today new deaths</p>
-          <p>{value.new_deaths}</p>
+          <p>{numberWithCommas(value.new_deaths)}</p>
         </div>
       </div>
     </>
