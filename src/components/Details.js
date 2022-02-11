@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import leftArrow from '../images/circle-arrow-left-solid.svg';
+import leftArrow from '../images/arrow_circle_left_white_24dp.svg';
 
 const Details = () => {
   const location = useLocation();
@@ -9,41 +9,42 @@ const Details = () => {
   const numberWithCommas = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   return (
-    <>
-      <header>
+    <div className="details-wrapper">
+      <header className="details-header">
         <Link to="/">
           <img src={leftArrow} alt="arrow to home" />
         </Link>
-        <h3>Country detail</h3>
+        <h5>Country detail</h5>
       </header>
-      <div>
+      <div className="light-color summary">
         <h2>{value.country_name}</h2>
+        <p>{numberWithCommas(value.today_confirmed)}</p>
       </div>
-      <div>
+      <div className="status">
         <p>
           country status -
           {date}
         </p>
       </div>
       <div>
-        <div>
+        <div className="totals light-color">
           <p>Today confirmed</p>
           <p>{numberWithCommas(value.today_confirmed)}</p>
         </div>
-        <div>
+        <div className="totals">
           <p>Today deaths</p>
           <p>{numberWithCommas(value.today_deaths)}</p>
         </div>
-        <div>
+        <div className="totals light-color">
           <p>Today new confirmed</p>
           <p>{numberWithCommas(value.new_confirmed)}</p>
         </div>
-        <div>
+        <div className="totals">
           <p>Today new deaths</p>
           <p>{numberWithCommas(value.new_deaths)}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
