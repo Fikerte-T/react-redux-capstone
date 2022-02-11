@@ -1,4 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(250 229 229);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ea4a88;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 img {
   width: 20px;
   height: 20px;
+}
+
+.countries-wrapper {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: auto;
+}
+
+@media screen and (min-width: 500px) {
+  .countries-wrapper {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .countries-wrapper {
+    grid-template-columns: auto auto auto auto auto;
+  }
+}
+
+.countries {
+  position: relative;
+  height: 150px;
+  text-align: center;
+  padding: 40px 20px 0 20px;
+}
+
+.light-color {
+  background-color: #fa669f;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.countries h2 {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
 }

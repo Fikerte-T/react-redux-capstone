@@ -1,18 +1,19 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import leftArrow from '../images/circle-arrow-left-solid.svg';
 
 const Details = () => {
   const location = useLocation();
   const value = location.state;
   const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  const numberWithCommas = (n) => {
-    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-  }
+  const numberWithCommas = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
   return (
     <>
       <header>
-        <img src={leftArrow} alt="arrow to home" />
+        <Link to="/">
+          <img src={leftArrow} alt="arrow to home" />
+        </Link>
         <h3>Country detail</h3>
       </header>
       <div>

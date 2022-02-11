@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getDataFromApi } from '../redux/home/home';
-import rightArrow from '../images/circle-arrow-right-solid.svg';
+import rightArrow from '../images/arrow_circle_right_white_24dp.svg';
 
 // const selectedData = (state) => state.homeReducer;
 const Home = () => {
@@ -34,10 +34,10 @@ const Home = () => {
     <>
       <header>
         <div>
-          <h1>{date}</h1>
+          <p className="date">{date}</p>
         </div>
         <div>
-          <h3>Top confirmed cases</h3>
+          <p>top confirmed cases</p>
         </div>
         <div>
           <input
@@ -56,28 +56,23 @@ const Home = () => {
                     >
                       {value.country_name}
                     </Link>
-
                   </div>
                 ))}
               </div>
             )
-
           }
-
         </div>
-
       </header>
-      <div>
+      <div className="countries-wrapper">
         {
         countryData.sort((a, b) => (b.today_confirmed - a.today_confirmed))
-          .slice(0, 20).map((c) => (
-            <div key={c.country_id}>
+          .slice(0, 20).map((c, index) => (
+            <div key={c.country_id} className={`countries ${index % 2 === 0 ? 'light-color' : ''}`}>
               <Link to="/details" state={c}>
-                <h2>{c.country_name}</h2>
+                <h2>{c.country_name.toUpperCase()}</h2>
                 <p>{(c.today_confirmed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
-                <img src={rightArrow} alt="arrow to details" />
+                <img src={rightArrow} alt="arrow to details" className="right-arrow" />
               </Link>
-
             </div>
           ))
       }
