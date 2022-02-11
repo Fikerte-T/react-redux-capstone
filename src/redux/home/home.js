@@ -1,3 +1,5 @@
+import { v4 as uuid4 } from 'uuid';
+
 const GET_DATA_FROM_API = 'react-redux-capstone/home/GET_DATA_FROM_API';
 const initialState = [];
 
@@ -19,9 +21,12 @@ export const getDataFromApi = () => (async (dispatch) => {
   const extractData = responseData.dates[date].countries;
 
   const countryDataArr = Object.entries(extractData).map(([, countryData]) => ({
+    country_id: uuid4(),
     country_name: countryData.name,
     today_confirmed: countryData.today_confirmed,
     today_deaths: countryData.today_deaths,
+    new_confirmed: countryData.today_new_confirmed,
+    new_deaths: countryData.today_new_deaths,
     date,
   }));
 

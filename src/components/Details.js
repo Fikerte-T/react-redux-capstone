@@ -1,7 +1,47 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import leftArrow from '../images/circle-arrow-left-solid.svg';
 
-const Details = () => (
-  <div />
-);
+const Details = () => {
+  const location = useLocation();
+  const value = location.state;
+  const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+  return (
+    <>
+      <header>
+        <img src={leftArrow} alt="arrow to home" />
+        <h3>Country detail</h3>
+      </header>
+      <div>
+        <h2>{value.country_name}</h2>
+      </div>
+      <div>
+        <p>
+          country status -
+          {date}
+        </p>
+      </div>
+      <div>
+        <div>
+          <p>Today confirmed</p>
+          <p>{value.today_confirmed}</p>
+        </div>
+        <div>
+          <p>Today deaths</p>
+          <p>{value.today_deaths}</p>
+        </div>
+        <div>
+          <p>Today new confirmed</p>
+          <p>{value.new_confirmed}</p>
+        </div>
+        <div>
+          <p>Today new deaths</p>
+          <p>{value.new_deaths}</p>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Details;
