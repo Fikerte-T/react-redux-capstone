@@ -48,8 +48,8 @@ const Home = () => {
           />
           {
             searchValue.length !== 0 && (
-              <div>
-                {searchValue.map((value) => (
+              <div className="search-wrapper">
+                {searchValue.slice(0, 10).map((value) => (
                   <div className="country" key={value.country_id}>
                     <Link
                       to="/details"

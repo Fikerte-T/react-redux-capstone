@@ -2,9 +2,7 @@ import { v4 as uuid4 } from 'uuid';
 
 const GET_DATA_FROM_API = 'react-redux-capstone/home/GET_DATA_FROM_API';
 const initialState = [];
-
 const today = new Date();
-// const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
 const formatDate = (today) => {
   const date = (today.getDate() < 10 ? '0' : '') + today.getDate();

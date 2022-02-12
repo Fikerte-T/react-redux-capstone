@@ -45,6 +45,45 @@ img {
   padding: 40px 20px 0 20px;
 }
 
+input {
+  color: #000;
+  outline: 2px solid #fda5c7;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.search-wrapper {
+  margin-top: 5px;
+  width: 195px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.country {
+  padding: 10px;
+}
+
+.country:hover {
+  background-color: #f291b6;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.country a {
+  color: #000;
+  font-size: 15px;
+}
+
+.country a:hover {
+  color: #fff;
+}
+
 .light-color {
   background-color: #fa669f;
 }
@@ -58,10 +97,6 @@ img {
 .countries h2 {
   font-size: 23px;
   font-weight: 600;
-}
-
-a {
-  text-decoration: none;
 }
 
 .details-wrapper {
