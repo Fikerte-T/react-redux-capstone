@@ -1,38 +1,148 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(250 229 229);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ea4a88;
+  position: relative;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+.countries-wrapper {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: auto;
+}
+
+.countries {
+  position: relative;
+  height: 150px;
   text-align: center;
+  padding: 40px 20px 0 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  color: #000;
+  outline: 2px solid #fda5c7;
+  border-radius: 2px;
+  padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-wrapper {
+  margin-top: 5px;
+  width: 195px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.country {
+  padding: 10px;
+}
+
+.country:hover {
+  background-color: #f291b6;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.country a {
+  color: #000;
+  font-size: 15px;
+}
+
+.country a:hover {
+  color: #fff;
+}
+
+.light-color {
+  background-color: #fa669f;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.countries h2 {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.details-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.details-header {
+  justify-content: space-between;
+}
+
+.summary {
+  text-align: center;
+  padding: 20px;
+}
+
+.status {
+  height: 22px;
+  padding: 0 25px;
+}
+
+.totals {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 500px) {
+  .countries-wrapper {
+    grid-template-columns: auto auto auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 800px) {
+  .countries-wrapper {
+    grid-template-columns: auto auto auto auto auto;
+  }
+
+  .details-wrapper {
+    border: 1px solid #f291b6;
+    border-radius: 15px;
+    width: 70%;
+    position: absolute;
+    top: 10%;
+    left: 15%;
   }
 }
