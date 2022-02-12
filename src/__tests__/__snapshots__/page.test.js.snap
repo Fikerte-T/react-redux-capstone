@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components test Renders Home Page 1`] = `
+Array [
+  <header>
+    <div>
+      <p
+        className="date"
+      >
+        Feb 12
+      </p>
+    </div>
+    <div>
+      <p
+        data-testid="my-test-id"
+      >
+        top confirmed cases
+      </p>
+    </div>
+    <div>
+      <input
+        data-testid="input"
+        onChange={[Function]}
+        placeholder="Search country"
+        type="text"
+      />
+    </div>
+  </header>,
+  <div
+    className="countries-wrapper"
+  />,
+]
+`;
