@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import leftArrow from '../images/arrow_circle_left_white_24dp.svg';
+import leftArrow from '../../images/arrow_circle_left_white_24dp.svg';
 
 const Details = () => {
   const location = useLocation();
@@ -17,8 +17,8 @@ const Details = () => {
         <h5>Country detail</h5>
       </header>
       <div className="light-color summary">
-        <h2>{value.country_name}</h2>
-        <p>{numberWithCommas(value.today_confirmed)}</p>
+        <h2 className="country-name">{value.country_name}</h2>
+        <p className="today-confirmed">{numberWithCommas(value.today_confirmed)}</p>
       </div>
       <div className="status">
         <p>

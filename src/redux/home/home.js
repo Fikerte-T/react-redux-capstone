@@ -27,7 +27,6 @@ export const getDataFromApi = () => (async (dispatch) => {
     today_deaths: countryData.today_deaths,
     new_confirmed: countryData.today_new_confirmed,
     new_deaths: countryData.today_new_deaths,
-    date,
   }));
 
   dispatch({

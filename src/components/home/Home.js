@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getDataFromApi } from '../../redux/home/home';
-import rightArrow from '../images/arrow_circle_right_white_24dp.svg';
+import rightArrow from '../../images/arrow_circle_right_white_24dp.svg';
 
 // const selectedData = (state) => state.homeReducer;
 const Home = () => {
@@ -37,10 +37,11 @@ const Home = () => {
           <p className="date">{date}</p>
         </div>
         <div>
-          <p>top confirmed cases</p>
+          <p data-testid="my-test-id">top confirmed cases</p>
         </div>
         <div>
           <input
+            data-testid="input"
             type="text"
             placeholder="Search country"
             onChange={handleSearch}
