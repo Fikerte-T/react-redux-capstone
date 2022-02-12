@@ -4,6 +4,9 @@
 
 > ![screenshot](./src/images/app1.png) ![screenshot](./src/images/app2.png) ![screenshot](./src/images/app3.png) ![screenshot](./src/images/app4.png)
 
+## Loom Video
+[Video presentation](https://www.loom.com/share/8e5caa6e137a4943aa86a5645fd23e18)
+
 ## Live Demo
 [Live demo on Netlify](https://vigilant-haibt-fecc8e.netlify.app/)
 
